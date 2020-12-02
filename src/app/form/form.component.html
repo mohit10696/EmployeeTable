@@ -1,0 +1,18 @@
+<p style="font-size: large;font-weight: bold;">Employee form </p>
+<form (ngSubmit)="addData()" #form="ngForm">
+Enter First name:
+<input type="text" name="fname" id=""  ngModel maxlength="20" (keydown.space)="$event.preventDefault()" required> <br><br>
+Enter Last name:
+<input type="text" name="lname" id="" ngModel maxlength="20" (keydown.space)="$event.preventDefault()" required> <br><br>
+Enter Salary:
+<input type="number" name="salary" id="" ngModel (keydown.space)="$event.preventDefault()" required> <br><br>
+Enter Contact:
+<input type="number" name="contact" id="" ngModel max="9999999999" (keydown.space)="$event.preventDefault()" required> <br><br>
+Enter Designation:
+<select name="designation" name="designation" ngModel="developer" required>
+  <option value="developer" >Developer</option>
+  <option value="designer" >Designer</option>
+</select>
+<br><br>
+<button type="submit" [disabled]="!form.valid">{{ editingMode ? "Update" : "Save"}}</button>
+</form>

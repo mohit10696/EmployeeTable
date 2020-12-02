@@ -1,0 +1,17 @@
+<p>Designer Table!</p>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Contact</th>
+    <th>Salary</th>
+  </tr>
+  <tr *ngFor="let item of Employeelist">
+    <ng-template [ngIf]="checkdeveloper(item.designation)">
+    <th> {{item.fname}} </th>
+    <th> {{item.lname}} </th>
+    <th> {{item.contact}} </th>
+    <th> {{item.salary}} </th>
+  </ng-template>
+  </tr>
+</table>
